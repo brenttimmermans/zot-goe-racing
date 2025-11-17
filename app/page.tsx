@@ -1,6 +1,7 @@
 import Image from '@/app/components/Image/Image';
 import styles from './page.module.css';
 import { getImages, getImagesExifProperties } from './lib/data';
+import Link from 'next/link';
 
 export default async function Home() {
   const files = await getImages();
@@ -19,14 +20,19 @@ export default async function Home() {
         const height = isHorizontal ? 400 : 600;
 
         return (
-          <Image
+          <Link
             key={image}
-            src={`/images/${image}`}
+            href={`/${image}`}
             className={isHorizontal ? styles.horizontal : styles.vertical}
-            alt={image}
-            width={width}
-            height={height}
-          />
+          >
+            <Image
+              key={image}
+              src={`/images/${image}`}
+              alt={image}
+              width={width}
+              height={height}
+            />
+          </Link>
         );
       })}
     </div>

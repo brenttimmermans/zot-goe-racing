@@ -33,7 +33,7 @@ export async function getImagesExifProperties<K extends string>(
   );
 }
 
-async function getImageExifProperties<K extends string>(
+export async function getImageExifProperties<K extends string>(
   image: string,
   properties: ExifProperty[],
 ): Promise<Partial<ExifData>> {
