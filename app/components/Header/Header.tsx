@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import CustomLink from './Link';
+import ContactLink from '../ContactLink/ContactLink';
 
 const INSTAGRAM_LINK = 'https://www.instagram.com/photos.by.brent';
 
@@ -16,7 +17,7 @@ export default function Header() {
         <nav>
           <ul>
             <li>
-              <CustomLink path="/contact">Contact</CustomLink>
+              <ContactLink />
             </li>
           </ul>
           <ul className={styles.socials}>
